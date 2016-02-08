@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# edit user's bash profile
+#
+PROFILE=$HOME/.bash_profile
+em $PROFILE
+echo -n "Source $PROFILE? (y/n) [y]: "
+read answer
+if [ "$answer" != "n" ] || [ "$answer" != "N" ]; then
+   source $PROFILE
+fi
