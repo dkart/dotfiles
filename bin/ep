@@ -1,13 +1,18 @@
 #!/bin/bash
 #
 # edit user's bash profile
+# WARNING: remember to source this file in order for .bash_profile
+# to be sourced in your current shell. E.g. run as '. ./ep'. You are
+# advised to make an alias: alias ep='. $HOME/bin/ep'
 #
 # depends on: em
 #
 PROFILE=$HOME/.bash_profile
+
 em $PROFILE
-echo -n "Source $PROFILE? (y/n) [y]: "
-read answer
-if [ "$answer" != "n" ] || [ "$answer" != "N" ]; then
-   source $PROFILE
+
+read -r -p "Source $PROFILE? (y/n) [y]: " response
+if ! [[ $response =~ ^([nN][oO]|[nN])$ ]]
+then
+    . $PROFILE
 fi
