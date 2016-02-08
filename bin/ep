@@ -2,6 +2,8 @@
 #
 # edit user's bash profile
 #
+# depends on: em
+#
 PROFILE=$HOME/.bash_profile
 em $PROFILE
 echo -n "Source $PROFILE? (y/n) [y]: "
